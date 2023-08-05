@@ -1,0 +1,142 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: block;
+    height: 100vh;
+    background-color: #f0f0f0;
+    font-family: sans-serif;
+    color: rgb(60, 60, 60);
+}
+
+#main-container {
+    background-color: rgb(244, 245, 250);
+    width: 80%;
+    margin: 0 auto;
+    padding: 2.5rem 1.875rem;
+}
+
+#form-container {
+    margin: 0 auto;
+    padding: 1.5rem;
+    border: 0.0625rem solid rgb(244, 245, 250);
+    background-color: white;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.2);
+    border-radius: 0.3rem;
+}
+
+.line-separator {
+    border-top: 0.0625rem solid rgb(222, 222, 224);
+    margin: 1rem 0;
+}
+
+h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    border: none;
+    border-radius: 0.25rem;
+    padding: 0.3125rem;
+    margin-bottom: 0.625rem;
+    width: 100%;
+}
+
+.input-container label {
+    display: block;
+    padding: 0.24rem;
+    border-right: none;
+    border: 0.0625rem solid #ccc;
+    border-radius: 0.25rem 0 0 0.25rem;
+    width: 15%;
+    background-color: rgb(236, 236, 236);
+}
+
+.input-container input {
+    display: block;
+    padding: 0.3125rem;
+    border-left: none;
+    border: 0.0625rem solid #ccc;
+    border-radius: 0 0.25rem 0.25rem 0;
+    width: 85%;
+}
+
+.input-container select {
+    display: block;
+    padding: 0.3125rem;
+    border-left: none;
+    border: 0.0625rem solid #ccc;
+    border-radius: 0 0.25rem 0.25rem 0;
+    width: 85%;
+}
+
+.input-container textarea{
+    display: block;
+    padding: 0.3125rem;
+    border-left: none;
+    border: 0.0625rem solid #ccc;
+    border-radius: 0 0.25rem 0.25rem 0;
+    width: 85%;
+}
+
+#address-lable {
+    display: block;
+    padding: 0.7rem;
+    border-right: none;
+    border: 0.0625rem solid #ccc;
+    border-radius: 0.25rem 0 0 0.25rem;
+    width: 13%;
+    background-color: rgb(236, 236, 236);
+}
+
+#countryCode {
+    height: 1.71rem;
+    width: 12%;
+}
+
+#mobileNumber {
+    width: 98%;
+    margin-left: 0.4rem;
+    margin-bottom: 0.625rem;
+    padding: 0.4rem;
+}
+
+.checkbox {
+    margin-bottom: 0.625rem;
+}
+.checkbox input[type="checkbox"] {
+    width: 1.1rem;
+    height: 1.1rem;
+}
+
+button.full-width-button {
+    width: 100%;
+    padding: 0.625rem 1.25rem;
+    background-color: rgb(30, 159, 242);
+    color: #fff;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+#a,
+#b,
+#c {
+    color: rgb(109, 109, 109);
+    font-weight: bolder;
+}
+
+#b,
+#c {
+    cursor: pointer;
+}
+
+.error-message {
+    color: red; 
+    font-size: 0.75rem; 
+    margin-top: 0; 
+    padding-top: 0; 
+    margin-left: 0.4rem;;
+  }

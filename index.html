@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="./styles.css">
+
+    <script type="module" src="./guest-details-comp/index.esm.js"></script>
+    <script type="module" src="./guest-details-comp/guest-details-comp.esm.js"></script>
+
+    
+</head>
+<body>
+
+    <jji-guest-details opened></jji-guest-details>
+
+    <button onclick="fetchGuestInfo()">Fetch Guest Info</button>
+    <button onclick="reset()">Reset</button>
+  
+    <script>
+      function reset() {
+        const guestInfo = document.querySelector('jji-guest-details');
+        guestInfo.data = null;
+      }
+      function fetchGuestInfo() {
+        var myHeaders = new Headers();
+        myHeaders.append('Content-Type', 'application/json');
+  
+        var raw = JSON.stringify({
+          BH_ID: 13509433,
+          LANGUAGE_ABBREVIATION: 'EN',
+          EXCLUDE_AC: true,
+          EXCLUDE_BH_POLICIES: false,
+        });
+  
+        var requestOptions = {
+          method: 'POST',
+          headers: myHeaders,
+          body: raw,
+          redirect: 'follow',
+        };
+  
+        fetch(
+          'https://gateway.igloorooms.com/IR/Get_Bh_Full?Ticket=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2OTEzMDk5OTEsIkNMQUlNLTAxIjoicktLMi9DY1dQQnM9IiwiQ0xBSU0tMDIiOiI5UStMQm93VTl6az0iLCJDTEFJTS0wMyI6Ilp3Tys5azJoTzUwPSIsIkNMQUlNLTA0IjoidEx1dmxrYUxwWktBZFQ0QXlPVFlSSU1uZVkvOFlGalYwWitvUzVITXlsTT0ifQ.ajLade-PthBIbjHLfTo1UQ9BwVDnJK7Czpp_dhAKCVE',
+          requestOptions,
+        )
+          .then(response => response.json())
+          .then(result => {
+            console.log(result);
+            const guestInfo = document.querySelector('jji-guest-details');
+            guestInfo.data = result;
+          })
+          .catch(error => console.log('error', error));
+      }
+      document.addEventListener('formDataSubmitted', e => {
+        console.log('formDataSubmitted', e.detail);
+      });
+    </script>
+</body>
+</html>

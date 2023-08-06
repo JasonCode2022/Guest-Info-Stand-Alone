@@ -78,7 +78,7 @@ h3 {
     border-left: none;
     border: 0.0625rem solid #ccc;
     border-radius: 0 0.25rem 0.25rem 0;
-    width: 85%;
+    width: 92%;
 }
 
 #address-lable {
@@ -87,7 +87,7 @@ h3 {
     border-right: none;
     border: 0.0625rem solid #ccc;
     border-radius: 0.25rem 0 0 0.25rem;
-    width: 13%;
+    width: 15%;
     background-color: rgb(236, 236, 236);
 }
 
@@ -99,6 +99,7 @@ h3 {
 #mobileNumber {
     width: 98%;
     margin-left: 0.4rem;
+    margin-right: 0.4rem;
     margin-bottom: 0.625rem;
     padding: 0.4rem;
 }
@@ -159,8 +160,9 @@ button.full-width-button {
     }
   
     #mobileNumber {
-        width: 95%;
+        width: 94%;
         margin-left: 0.3rem;
+        margin-right: 0.3rem;
         margin-bottom: 0.625rem;
         padding: 0.4rem;
     }
@@ -175,7 +177,15 @@ button.full-width-button {
         border-right: none;
         border: 0.0625rem solid #ccc;
         border-radius: 0.25rem 0 0 0.25rem;
-        width: 35%;
+        width: 34%;
         background-color: rgb(236, 236, 236);
+    }
+
+    #countryCode-label {
+        width: 37%;
+    }
+
+    #country-label {
+        width: 37%;
     }
   }

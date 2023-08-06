@@ -16,47 +16,51 @@
 
     <jji-guest-details opened></jji-guest-details>
 
-    <button onclick="fetchGuestDetails()">Fetch Guest Details</button>
-    <button onclick="reset()">Reset</button>
+     <!-- Buttons to fetch guest info and reset data -->
+  <button onclick="fetchGuestDetails()">Fetch Guest Details</button>
+  <button onclick="reset()">Reset</button>
+
   
-    <script>
-      function reset() {
-        const guestInfo = document.querySelector('jji-guest-details');
-        guestInfo.data = null;
-      }
-      function fetchGuestDetails() {
-        var myHeaders = new Headers();
-        myHeaders.append('Content-Type', 'application/json');
-  
-        var raw = JSON.stringify({
-          BH_ID: 13509433,
-          LANGUAGE_ABBREVIATION: 'EN',
-          EXCLUDE_AC: true,
-          EXCLUDE_BH_POLICIES: false,
-        });
-  
-        var requestOptions = {
-          method: 'POST',
-          headers: myHeaders,
-          body: raw,
-          redirect: 'follow',
-        };
-  
-        fetch(
-          'https://gateway.igloorooms.com/IR/Get_Bh_Full?Ticket=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2OTEzMDk5OTEsIkNMQUlNLTAxIjoicktLMi9DY1dQQnM9IiwiQ0xBSU0tMDIiOiI5UStMQm93VTl6az0iLCJDTEFJTS0wMyI6Ilp3Tys5azJoTzUwPSIsIkNMQUlNLTA0IjoidEx1dmxrYUxwWktBZFQ0QXlPVFlSSU1uZVkvOFlGalYwWitvUzVITXlsTT0ifQ.ajLade-PthBIbjHLfTo1UQ9BwVDnJK7Czpp_dhAKCVE',
-          requestOptions,
-        )
-          .then(response => response.json())
-          .then(result => {
-            console.log(result);
-            const guestInfo = document.querySelector('jji-guest-details');
-            guestInfo.data = result;
-          })
-          .catch(error => console.log('error', error));
-      }
-      document.addEventListener('formDataSubmitted', e => {
-        console.log('formDataSubmitted', e.detail);
+  <!-- Resets the guest info data by setting it to null. -->
+  <!-- Fetches guest info from the API and updates the StencilJS Guest Details component with the fetched data. -->
+  <!-- Event listener for the 'formDataSubmitted' event emitted by the StencilJS Guest Details component. -->
+  <!-- Logs the form data submitted.  -->
+  <script>
+    function reset() {
+      const guestInfo = document.querySelector('jji-guest-details');
+      guestInfo.data = null;
+    }
+    function fetchGuestDetails() {
+      var myHeaders = new Headers();
+      myHeaders.append('Content-Type', 'application/json');
+
+      var raw = JSON.stringify({
+        BH_ID: 13509433,
+        LANGUAGE_ABBREVIATION: 'EN',
+        EXCLUDE_AC: true,
+        EXCLUDE_BH_POLICIES: false,
       });
+
+      var requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow',
+      };
+
+      fetch(
+        "https://gateway.igloorooms.com/IR/Get_Bh_Full?Ticket=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2OTE0ODMwNzcsIkNMQUlNLTAxIjoicktLMi9DY1dQQnM9IiwiQ0xBSU0tMDIiOiI5UStMQm93VTl6az0iLCJDTEFJTS0wMyI6Ilp3Tys5azJoTzUwPSIsIkNMQUlNLTA0IjoiZE5oVHRrc2lQaS9FV29LaXB2TnhkejU1K1VVd2VXc3dqZGlhUDFMYmN2OD0ifQ.t6AUWG-Oq70EnldT5b2zZwjvzQyBESapcZx6uK7wDMI", requestOptions)
+        .then(response => response.json())
+        .then(result => {
+          console.log(result);
+          const guestInfo = document.querySelector('jji-guest-details');
+          guestInfo.data = result;
+        })
+        .catch(error => console.log('error', error));
+    }
+    document.addEventListener('formDataSubmitted', e => {
+      console.log('formDataSubmitted', e.detail);
+    });
     </script>
 </body>
 </html>

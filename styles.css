@@ -140,3 +140,42 @@ button.full-width-button {
     padding-top: 0; 
     margin-left: 0.4rem;;
   }
+
+  /* CSS for mobile devices */
+@media (max-width: 768px) {
+    #main-container {
+      width: 90%;
+      padding: 1.25rem;
+    }
+  
+    .input-container label {
+      width: 40%;
+    }
+  
+    .input-container input,
+    .input-container select,
+    .input-container textarea {
+      width: 60%; 
+    }
+  
+    #mobileNumber {
+        width: 95%;
+        margin-left: 0.3rem;
+        margin-bottom: 0.625rem;
+        padding: 0.4rem;
+    }
+  
+    #countryCode {
+      width: 25%;
+    }
+
+    #address-lable {
+        display: block;
+        padding: 0.7rem;
+        border-right: none;
+        border: 0.0625rem solid #ccc;
+        border-radius: 0.25rem 0 0 0.25rem;
+        width: 35%;
+        background-color: rgb(236, 236, 236);
+    }
+  }

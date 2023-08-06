@@ -16,7 +16,7 @@
 
     <jji-guest-details opened></jji-guest-details>
 
-    <button onclick="fetchGuestInfo()">Fetch Guest Info</button>
+    <button onclick="fetchGuestDetails()">Fetch Guest Details</button>
     <button onclick="reset()">Reset</button>
   
     <script>
@@ -24,7 +24,7 @@
         const guestInfo = document.querySelector('jji-guest-details');
         guestInfo.data = null;
       }
-      function fetchGuestInfo() {
+      function fetchGuestDetails() {
         var myHeaders = new Headers();
         myHeaders.append('Content-Type', 'application/json');
   
